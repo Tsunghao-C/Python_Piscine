@@ -17,6 +17,7 @@
 
 
 def count_in_list(list, word):
+    '''count appearance in a list'''
     count = 0
     if not list or not word:
         return count
