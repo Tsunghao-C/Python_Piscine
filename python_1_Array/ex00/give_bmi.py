@@ -4,7 +4,11 @@ import numpy as np
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     '''retrun a list of BMIs'''
     if not height or not weight:
-        raise ValueError("Error: Bad input")
+        raise ValueError("Error: Empty input")
+    if not all(isinstance(elem, int | float) for elem in height):
+        raise ValueError("Error: Not all elements in height are int or float")
+    if not all(isinstance(elem, int | float) for elem in weight):
+        raise ValueError("Error: Not all elements in weight are int or float")
     for x in height:
         if x == 0:
             raise ValueError("Error: zero height")
