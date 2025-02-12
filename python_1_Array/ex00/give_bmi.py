@@ -17,7 +17,6 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     return np_bmi.tolist()
 
 
-
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     '''return a list of Bool showing if a BMI is over limit'''
     output = [x > limit for x in bmi]
