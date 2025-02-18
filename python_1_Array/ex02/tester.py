@@ -18,6 +18,14 @@ except FileNotFoundError as e:
 
 
 print("------------------------")
+print("Wrong file format")
+try:
+    print(ft_load("cat.png"))
+except Exception as e:
+    print(e)
+
+
+print("------------------------")
 print("Empty input")
 try:
     print(ft_load(""))
