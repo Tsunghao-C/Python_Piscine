@@ -8,7 +8,7 @@ try:
         print(img)
     except ValueError as e:
         print(e)
-    
+
     # # Convert to grey scale image
     # gray_img = img.mean(axis=2, keepdims=True)
     # print(f"Gray scale image: {gray_img.shape}")
