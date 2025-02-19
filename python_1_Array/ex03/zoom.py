@@ -18,7 +18,7 @@ def main():
         try:
             slice_img = img[10:150, 105:245, :1]
         except IndexError as e:
-            raise ValueError(f"Error: Slicing failed - index out of bounds: {e}")
+            raise ValueError(f"Error: Slicing failed - out of bounds: {e}")
 
         if slice_img.size == 0:
             raise ValueError("Error: Slicing resulted in empty array")
