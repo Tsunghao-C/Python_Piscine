@@ -43,14 +43,19 @@ NESTED_MORSE = {
 
 
 def main():
-    if len(sys.argv) - 1 != 1 or not sys.argv[1].isalnum():
-        print("AssertionError: the arguments are bad")
-        return 1
-    string = sys.argv[1]
-    list_code = [NESTED_MORSE[str(x).upper()] for x in string]
-    # print(" ".join(list_code))
-    print(*list_code)
-    return 0
+    """
+    Returns input string into Morse Code.
+    """
+    try:
+        if len(sys.argv) - 1 != 1 or not sys.argv[1].isalnum():
+            raise AssertionError("the arguments are bad")
+        string = sys.argv[1]
+        list_code = [NESTED_MORSE[str(x).upper()] for x in string]
+        # Use "*" the unpacking operator to unpack a list object into \
+        # separate arguments
+        print(*list_code)
+    except AssertionError as e:
+        print("AssertionError:", e)
 
 
 if __name__ == "__main__":
