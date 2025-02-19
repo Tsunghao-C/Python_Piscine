@@ -9,9 +9,9 @@ try:
     except ValueError as e:
         print(e)
 
-    # Do slicing
+    # Do slicing and grey scale
     try:
-        slice_img = img[10:150, 100:250, :1]
+        slice_img = img[10:150, 105:245, :1]
     except IndexError as e:
         raise ValueError(f"Error: Slicing failed - index out of bounds: {e}")
 
@@ -21,8 +21,7 @@ try:
     print(slice_img)
 
     # Display Image
-    imgplot = plt.imshow(slice_img)
-    plt.title("Sliced Image")
+    imgplot = plt.imshow(slice_img, cmap='gray')
     plt.show()
 
 except FileNotFoundError as e:
@@ -33,3 +32,11 @@ except Exception as e:
     print(f"Unexpected error: {e}")
 finally:
     plt.close()
+
+
+# This part to download grayscale image
+# from PIL import Image
+
+
+# image = Image.fromarray(slice_img)
+# image.save('output.jpeg')
