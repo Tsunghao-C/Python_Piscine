@@ -13,7 +13,7 @@ def ft_tqdm(lst: range) -> None:
     total_len = len(lst)
     start_time = time.time()
 
-    terminal_width = shutil.get_terminal_size().columns -  30
+    terminal_width = shutil.get_terminal_size().columns - 30
     progress_bar_width = terminal_width - 10
     for i, item in enumerate(lst, start=1):
         progress = int(i / total_len * progress_bar_width)
