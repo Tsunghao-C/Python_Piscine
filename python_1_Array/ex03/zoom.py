@@ -4,7 +4,7 @@ from load_image import ft_load
 try:
     # Load Original Image
     try:
-        img = ft_load("cat.jpg")
+        img = ft_load("cat.jpeg")
         print(img)
     except ValueError as e:
         print(e)
