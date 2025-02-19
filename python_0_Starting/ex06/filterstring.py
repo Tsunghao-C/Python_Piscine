@@ -1,33 +1,33 @@
 import sys
-# from ft_filter import ft_filter
-
-
-def is_integer(s: str) -> bool:
-    '''Return true if s is integer'''
-    try:
-        int(s)
-        return True
-    except ValueError:
-        return False
+from ft_filter import ft_filter
 
 
 def main():
-    if len(sys.argv) - 1 != 2:
-        print("AssertionError: the arguments are bad")
-        return 1
-    elif type(sys.argv[1]).__name__ != "str" or not is_integer(sys.argv[2]):
-        print("AssertionError: the arguments are bad")
-        return 1
-    else:
-        len_limit = int(sys.argv[2])
-        str_list = sys.argv[1].split()
-        # Using ft_filter
-        # output = list(ft_filter(lambda x: len(x) > len_limit, str_list))
-        # print(output)
-        # Using both lamda and list comprehension
-        output2 = [x for x in str_list if (lambda s: len(s) > len_limit)(x)]
-        print(output2)
-    return 0
+    """
+    Accept 2 arguemnts:
+    1. string
+    2. integer
+
+    Returns a list of string whose length is greater than the integer.
+    """
+    try:   
+        if len(sys.argv) - 1 != 2:
+            raise AssertionError("the arguments are bad")
+        num = int(sys.argv[2])
+        if not isinstance(sys.argv[1], str) or not isinstance(num, int):
+            raise AssertionError("the arguments are bad")
+        else:
+            len_limit = lambda x: len(x) > num
+            str_list = sys.argv[1].split()
+            # Using ft_filter
+            output = list(ft_filter(len_limit, str_list))
+            # Using both lamda and list comprehension
+            # output = [x for x in str_list if len_limit(x)]
+            print(output)
+    except ValueError as e:
+        print("ValueError:", e)
+    except AssertionError as e:
+        print("AssertionError:", e)
 
 
 if __name__ == "__main__":
