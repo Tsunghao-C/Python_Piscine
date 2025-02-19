@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-def ft_load(path: str):
+def ft_load(path: str) -> np.ndarray:
     '''load an image and return array'''
     # Check input
     if not isinstance(path, str):
