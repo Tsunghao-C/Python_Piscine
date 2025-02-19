@@ -10,19 +10,18 @@ def main():
 
     Returns a list of string whose length is greater than the integer.
     """
-    try:   
+    try:
         if len(sys.argv) - 1 != 2:
             raise AssertionError("the arguments are bad")
         num = int(sys.argv[2])
         if not isinstance(sys.argv[1], str) or not isinstance(num, int):
             raise AssertionError("the arguments are bad")
         else:
-            len_limit = lambda x: len(x) > num
             str_list = sys.argv[1].split()
             # Using ft_filter
-            output = list(ft_filter(len_limit, str_list))
+            output = list(ft_filter(lambda x: len(x) > num, str_list))
             # Using both lamda and list comprehension
-            # output = [x for x in str_list if len_limit(x)]
+            # output = [x for x in str_list if (lambda s: len(s) > num)(x)]
             print(output)
     except ValueError as e:
         print("ValueError:", e)
