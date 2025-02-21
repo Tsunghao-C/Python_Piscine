@@ -12,7 +12,7 @@ except ValueError as e:
 print("------------------------")
 print("Wrong path")
 try:
-    print(ft_load("cat1.jpg"))
+    print(ft_load("cat.jpg"))
 except FileNotFoundError as e:
     print(e)
 
@@ -20,7 +20,7 @@ except FileNotFoundError as e:
 print("------------------------")
 print("Wrong file format")
 try:
-    print(ft_load("cat.png"))
+    print(ft_load("landscape.png"))
 except Exception as e:
     print(e)
 
@@ -45,6 +45,6 @@ print("------------------------")
 print("Correct input")
 
 try:
-    print(ft_load("cat.jpg"))
+    print(ft_load("landscape.jpg"))
 except ValueError as e:
     print(e)
