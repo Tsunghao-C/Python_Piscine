@@ -1,7 +1,10 @@
 import numpy as np
 
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(
+    height: list[int | float],
+    weight: list[int | float]
+) -> list[int | float]:
     '''retrun a list of BMIs'''
     if not height or not weight:
         raise ValueError("Error: Empty input")
