@@ -25,7 +25,7 @@ def ft_load(path: str):
             raise ValueError("Error: Image loading returned None")
         if not isinstance(img, np.ndarray):
             raise TypeError(f"Error: Expected numpy array, got {type(img)}")
-        print(f"The shape of image is: {img.shape}")
+        # print(f"The shape of image is: {img.shape}")
         return img
     except (ValueError, TypeError) as e:
         raise ValueError(f"Error: Cannot read {path} - {str(e)}")
