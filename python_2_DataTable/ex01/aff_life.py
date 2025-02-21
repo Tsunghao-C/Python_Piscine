@@ -14,7 +14,7 @@ def main():
             raise AssertionError("Bad input, need one argument")
 
         # value check
-        country = str(sys.argv[1]).lower()
+        country = str(sys.argv[1]).title()
 
         # load data
         data = load("life_expectancy_years.csv")
@@ -25,13 +25,16 @@ def main():
         # retrieve required data
         if 'country' not in data.columns:
             raise AssertionError("Column 'country' not found")
-        data_y = data[data['country'].str.lower() == country]
+        data_y = data[data['country'].str.title() == country]
         if data_y.empty:
             raise AssertionError(f"{country} data not found")
-        # print(data_y)
 
         # make the plot
-        
+        data_y = data_y.iloc[:, 1:].T
+        data_y.columns = ['Life Expectancy']
+        data_y.plot(title=f"{country} Life expectancy Projections", ylabel="Life expectancy", xlabel="Year", legend=None)
+        print(data_y)
+        plt.show()
     except AssertionError as e:
         print("AssertionError:", e)
     except ValueError as e:
