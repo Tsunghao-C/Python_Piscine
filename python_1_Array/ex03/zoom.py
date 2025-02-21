@@ -7,12 +7,10 @@ def main():
     Load image, process image by slicing, show the image in grayscale.
     """
     try:
-        # Load Original Image
-        try:
-            img = ft_load("animal.jpeg")
-            print(img)
-        except ValueError as e:
-            print(e)
+        # Load image
+        img = ft_load("animal.jpeg")
+        if img is None:
+            raise FileNotFoundError()
 
         # Do slicing and grey scale
         try:
@@ -29,8 +27,8 @@ def main():
         plt.imshow(slice_img, cmap='gray')
         plt.show()
 
-    except FileNotFoundError as e:
-        print(e)
+    except FileNotFoundError:
+        pass
     except ValueError as e:
         print(e)
     except Exception as e:
