@@ -47,7 +47,10 @@ def main():
     Returns input string into Morse Code.
     """
     try:
-        if len(sys.argv) - 1 != 1 or not sys.argv[1].isalnum():
+        if (
+            len(sys.argv) != 2
+            or not all(str(x).upper() in NESTED_MORSE for x in sys.argv[1])
+        ):
             raise AssertionError("the arguments are bad")
         string = sys.argv[1]
         list_code = [NESTED_MORSE[str(x).upper()] for x in string]
