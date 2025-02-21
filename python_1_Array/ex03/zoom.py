@@ -9,14 +9,14 @@ def main():
     try:
         # Load Original Image
         try:
-            img = ft_load("cat.jpeg")
+            img = ft_load("animal.jpeg")
             print(img)
         except ValueError as e:
             print(e)
 
         # Do slicing and grey scale
         try:
-            slice_img = img[10:150, 105:245, :1]
+            slice_img = img[100:500, 450:850, :1]
         except IndexError as e:
             raise ValueError(f"Error: Slicing failed - out of bounds: {e}")
 
