@@ -10,7 +10,7 @@ def load(path: str) -> pd.DataFrame:
             raise AssertionError("bad input")
         if not path.lower().endswith(".csv"):
             raise AssertionError("bad input, only accept .csv")
-        loaded_data = pd.read_csv(path)
+        loaded_data = pd.read_csv(path, index_col=None)
         print(f"Loading dataset of dimensions {loaded_data.shape}")
         return loaded_data
     except AssertionError as e:
