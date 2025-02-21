@@ -12,36 +12,20 @@ print(slice_me(family, 0, 2))
 print(slice_me(family, 1, -2))
 
 # Error cases
-try:
-    # not a list
-    slice_me("Not a list", 0, 1)
-except ValueError as e:
-    print(e)
+# not a list
+slice_me("Not a list", 0, 1)
 
 
-try:
-    # Empty list
-    slice_me([], 0, 1)
-except ValueError as e:
-    print(e)
+# Empty list
+slice_me([], 0, 1)
 
 
-try:
-    # not 100% a 2D list
-    slice_me([[1, 2], "not a list", [32, 4.4]], 0, 1)
-except ValueError as e:
-    print(e)
+# not 100% a 2D list
+slice_me([[1, 2], "not a list", [32, 4.4]], 0, 1)
+
+# not an aligned 2D list
+slice_me([[1, 2, 3], [4, 5], [6, 7, 8]], 0, 1)
 
 
-try:
-    # not an aligned 2D list
-    slice_me([[1, 2, 3], [4, 5], [6, 7, 8]], 0, 1)
-except ValueError as e:
-    print(e)
-
-
-try:
-    # not a 2D list
-    slice_me([[[0, 0], [0, 1]], [[1, 0], [1, 1]], [[2, 0], [2, 1]]], 0, 1)
-except ValueError as e:
-    print(e)
+# not a 2D list
+slice_me([[[0, 0], [0, 1]], [[1, 0], [1, 1]], [[2, 0], [2, 1]]], 0, 1)
