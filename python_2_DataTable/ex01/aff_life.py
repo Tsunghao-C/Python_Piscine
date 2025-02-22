@@ -1,7 +1,6 @@
 from load_csv import load
 import sys
 import matplotlib.pyplot as plt
-import pandas as pd
 
 
 def main():
@@ -32,7 +31,12 @@ def main():
         # make the plot
         data_y = data_y.iloc[:, 1:].T
         data_y.columns = ['Life Expectancy']
-        data_y.plot(title=f"{country} Life expectancy Projections", ylabel="Life expectancy", xlabel="Year", legend=None)
+        data_y.plot(
+            title=f"{country} Life expectancy Projections",
+            ylabel="Life expectancy",
+            xlabel="Year",
+            legend=None
+        )
         print(data_y)
         plt.show()
     except AssertionError as e:
