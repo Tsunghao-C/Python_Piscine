@@ -51,6 +51,7 @@ class Lannister(Character):
         return cls(name, is_alive)
 
 # Note about decorator in Python
+
 # A 'decorator in Python is a special type of function that allows you to
 # modify the behavior of another function or method without changing its
 # actual code. It's like an extension you applied to another target function
@@ -63,3 +64,15 @@ class Lannister(Character):
 # 2. Memoization: Cache the results of expensive function calls
 # 3. Acess Control: Restrict function usage based on user roles
 # 4. Validation: Check arguments before running a function
+
+
+# Note about different type of methods:
+
+# 1. Instance methods = Best for operations on instance of class object
+# 2. Static methods = Best for utility functions that do not need acces
+# to class data
+# 3. Class methods = Best for class-level data or require access to the
+# class itself (ex. dealing with class variables)
+# 4. Magic method = Dunder methods (double underscore) __init__, __str__...
+# They are called by many Python built-in functions, similar to
+# C++ operator overload that developer can customize behaviors
