@@ -44,7 +44,7 @@ class Lannister(Character):
         self.is_alive = False
 
     @classmethod
-    def create_lannister(cls, name, is_alive):
+    def create_lannister(cls, name, is_alive=True):
         """Classmethod to create new instance"""
         # A class method received cls (the clas itself) as first argument
         # this allows it to create new instances dynamically

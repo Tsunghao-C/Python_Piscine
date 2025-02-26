@@ -25,8 +25,10 @@ class Stark(Character):
     """Your docstring for Class"""
     def __init__(self, name: str, is_alive: bool = True):
         """Your docstring for Constructor"""
+        # Used keyword "super()" to call the parent method
         super().__init__(name, is_alive)
 
     def die(self):
         """Your docstring for Method"""
+        # Solid class must define the abstract methods
         self.is_alive = False
