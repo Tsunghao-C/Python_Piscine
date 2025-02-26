@@ -26,3 +26,10 @@ class calculator:
             return None
         self.array = [x / object for x in self.array]
         print(self.array)
+
+# Dunder methods (double underscore) __init__, __str__, __add__
+# They are called by many Python built-in functions, similar to
+# C++ operator overload that developer can customize behaviors
+
+# This exercise is overloading the + - * / operators using
+# Dunder Methods
