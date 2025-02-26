@@ -20,6 +20,7 @@ class Baratheon(Character):
 
     def die(self):
         """Baratheon die method"""
+        print("Die as a Baratheon")
         self.is_alive = False
 
 
@@ -41,10 +42,11 @@ class Lannister(Character):
 
     def die(self):
         """Lannister die method"""
+        print("Die as a Lannister")
         self.is_alive = False
 
     @classmethod
-    def create_lannister(cls, name, is_alive):
+    def create_lannister(cls, name, is_alive=True):
         """Classmethod to create new instance"""
         # A class method received cls (the clas itself) as first argument
         # this allows it to create new instances dynamically
