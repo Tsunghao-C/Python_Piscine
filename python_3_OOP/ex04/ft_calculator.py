@@ -6,7 +6,7 @@ class calculator:
         dot = 0
         for x, y in zip(V1, V2):
             dot += x * y
-        print(f"Doc product is: {dot}")
+        print(f"Dot product is: {dot}")
 
     @staticmethod
     def add_vec(V1: list[float], V2: list[float]) -> None:
