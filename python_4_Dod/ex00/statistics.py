@@ -74,4 +74,4 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             try:
                 print(f"{x} : {func(list(args))}")
             except ValueError:
-                print("Error")
+                print("ERROR")
